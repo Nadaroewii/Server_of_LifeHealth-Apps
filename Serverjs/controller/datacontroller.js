@@ -109,6 +109,7 @@ exports.dataencrypt = (req, res, next) => {
                 'kal': hasilDekripkal,
                 'lastlatitude': hasilDekriplat,
                 'lastlongitude': hasilDekriplon,
+               // 'userId': User.find('_id').where().in()
             };
 
            // var stringdata = JSON.stringify(datadekrip);
@@ -143,6 +144,7 @@ exports.dataencrypt = (req, res, next) => {
                     if (error) {
                         console.log(error);
                     } else {
+
                         console.log("Berhasil");
                        // return res.status(200).send({
                          //   message: 'Success',
