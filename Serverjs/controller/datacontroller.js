@@ -4,6 +4,7 @@ const pct = require('../../ElgamalCrypto/PecahChiperText');
 const Base64 = require('js-base64');
 const ed = require('../../ElgamalCrypto/EnkripDekrip');
 const ky = require('../../Serverjs/config/key');
+const auth = require('../middleware/auth');
 //const datamodel = require('../models/datamodel');
 
 //const userss = usersmodel.userSchema;
@@ -79,6 +80,7 @@ exports.dataencrypt = (req, res, next) => {
                     hasilDekripdis += dekdis;
             }
         
+
         //console.log("\ndataatcv");
         for (var i = 0; i < ndeltadat.length; i++) {
             let dekdat = ed.getDekripsi(ngamadat[i].toString(),
@@ -101,6 +103,8 @@ exports.dataencrypt = (req, res, next) => {
                         ndeltalon[i].toString(), ky.PubKey[0], ky.privateKey, datachiper['lastlongitude']);
                     hasilDekriplon += deklon;
               }
+            
+
 
               let datadekrip = {
                 'duration': hasilDekripdur,
@@ -109,7 +113,7 @@ exports.dataencrypt = (req, res, next) => {
                 'kal': hasilDekripkal,
                 'lastlatitude': hasilDekriplat,
                 'lastlongitude': hasilDekriplon,
-               // 'userId': User.find('_id').where().in()
+                'userId': User.find().where("username").equals(req.user.username)
             };
 
            // var stringdata = JSON.stringify(datadekrip);

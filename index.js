@@ -28,16 +28,16 @@ mongoose.connect(dbConfig.db, {
     }
 );
 
-auth.authenticateToken.unless = unless;
-app.use(
-  auth.authenticateToken.unless({
-    path: [
-      {url : "/users/login", methods: ["POST"] },
-      {url : "/users/register", methods: ["POST"] },
-      {url : "/users/historydata", methods: ["GET"]}
-    ],
-  })
-);
+// auth.authenticateToken.unless = unless;
+// app.use(
+//   auth.authenticateToken.unless({
+//     path: [
+//       {url : "/users/login", methods: ["POST"] },
+//       {url : "/users/register", methods: ["POST"] },
+//       {url : "/users/historydata", methods: ["GET"]}
+//     ],
+//   })
+// );
 
 app.use(express.json());
 // app.use(bodyParser.json());
