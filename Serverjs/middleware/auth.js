@@ -3,8 +3,7 @@ const jwt = require('jsonwebtoken');
 const TOKEN_KEY = "RANDOM_KEY";
 function authenticateToken(req, res, next) {
     //const secret = 'Snippet_SecretKEY';
-    const authHeader = req.headers['authorization'];
-    console.log(authHeader);
+    const authHeader = req.headers.authorization
     if (authHeader != undefined) { 
     
     const token = authHeader && authHeader.split(" ")[1];
@@ -12,11 +11,11 @@ function authenticateToken(req, res, next) {
     let decodedData;
 
     if (token && isCustomAuth) {
-        decodedData = jwt.verify(token, TOKEN_KEY);
-
-        req.user = decodedData?.user;
+      decodedData = jwt.verify(token, TOKEN_KEY);
+      
+      req.user = decodedData.data;
     } else {
-        decodedData = jwt.decode(token);
+      decodedData = jwt.decode(token);
 
         req.user = decodedData?.user;
     }

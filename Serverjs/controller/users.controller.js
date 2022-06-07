@@ -40,24 +40,26 @@ exports.userProfile = (req, res, next) => {
     return res.status(200).json({ message: "Authorized User! "});
 };
 
- exports.historydata = (req, res, next) => {
-    User.findById(
-        req.body.userId,
-        function (error, hasil) {
-            if (error) {
-                console.log(error);
-            } else {
-                Hasil.find().where('_id').in(hasil.userId).exec(function (err, records) {
-                    console.log(err);
-                    console.log(records);
-                    return res.status(200).send({
-                        message: 'Success',
-                        data: records,
-                    });
-                });
-            }
-        }
-    );
+ exports.historydata = async (req, res, next) => {
+  const user = await usersmodel.findOne({ username: req.user })
+  // Hasil.find().where('userId').equals(user._id).exec(function (err, records) {
+  Hasil.find({ 'userId': { $exists: true, $eq: user._id } }).exec(function (err, records) {
+      console.log(err);
+      // console.log(require('mongoose').model('hasil').schema);
+      return res.status(200).send({
+          message: 'Success',
+          data: records,
+      });
+  });
+    // User.findById(
+    //     req.body.userId,
+    //     function (error, hasil) {
+    //         if (error) {
+    //             console.log(error);
+    //         } else {
+    //         }
+    //     }
+    // );
 };
 //     var model = {
 //         userId: req.params.id,
