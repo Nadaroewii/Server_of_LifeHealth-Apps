@@ -113,7 +113,7 @@ exports.dataencrypt = (req, res, next) => {
                 'kal': hasilDekripkal,
                 'lastlatitude': hasilDekriplat,
                 'lastlongitude': hasilDekriplon,
-                'userId': User.find().where("username").equals(req.user.username)
+                'userId': req.body.userId,
             };
 
            // var stringdata = JSON.stringify(datadekrip);
@@ -140,22 +140,27 @@ exports.dataencrypt = (req, res, next) => {
             if (error) {
                 return next(error);
             }
-            User.findByIdAndUpdate(
-                req.body.userId,
-                { $push: { userId: result.id } },
-                { new: true },
-                function (error, user) {
-                    if (error) {
-                        console.log(error);
-                    } else {
 
-                        console.log("Berhasil");
-                       // return res.status(200).send({
-                         //   message: 'Success',
-                        //});                   
-                    }
-                }
-            );
+            return res.status(200).send({
+              message: "Success",
+              data: result,
+          });
+            // User.findByIdAndUpdate(
+            //     req.body.userId,
+            //     { $push: { userId: result.id } },
+            //     { new: true },
+            //     function (error, user) {
+            //         if (error) {
+            //             console.log(error);
+            //         } else {
+
+            //             console.log("Berhasil");
+            //            // return res.status(200).send({
+            //              //   message: 'Success',
+            //             //});                   
+            //         }
+            //     }
+            // );
         });
     } catch (error) {
         console.log(error)

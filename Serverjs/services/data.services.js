@@ -18,10 +18,10 @@ async function dataencrypt(params, callback) {
     }
 
 async function datadecrypt(params, callback) {
-
         const hasil = new Hasil(params);
         hasil.save()
             .then((response) => {
+              console.log(response);
             return callback(null, response);
         })
             .catch((error) => {
