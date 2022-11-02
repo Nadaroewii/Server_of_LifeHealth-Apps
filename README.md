@@ -1,2 +1,11 @@
 # Server Life-Health Applications
-This is the server of the Life-Health application using Javascript
+
+A Server that was build using Nodejs and this server had added security system using Elgamal Algorithm. This is Application from my Final Project
+
+The details of this apps:
+
+1. Use Javascript for programming language (Nodejs)
+2. Use MongoDB Atlas for Database.
+3. Use Elgamal Algorithm for secure user data.
+4. Use jwt Token for each user.
+
