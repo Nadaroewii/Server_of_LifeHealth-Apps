@@ -1,6 +1,6 @@
 # Server Life-Health Applications
 
-A Server that was build using Nodejs and this server had added security system using Elgamal Algorithm. This is Application from my Final Project
+A Server that was build using Node Js and this server has added security system using Elgamal Algorithm. This is Application from my Final Project
 
 The details of this apps:
 
