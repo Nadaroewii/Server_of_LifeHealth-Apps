@@ -79,13 +79,3 @@ exports.userProfile = (req, res, next) => {
 //         }
 //     });     
 //  };
-//exports.methodGet = async(req, res) =>{
-    //try {
-        //const getData = userss.findAll({})
-      //  res.json(getData)
-    //} catch (error) {
-    //    console.error(error.message);
-  //      res.status(500).send('masih error')
-        
-  //  }
-//}
