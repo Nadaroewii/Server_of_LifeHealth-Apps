@@ -7,7 +7,7 @@ function authenticateToken(req, res, next) {
     if (authHeader != undefined) { 
     
     const token = authHeader && authHeader.split(" ")[1];
-    const isCustomAuth = token.length < 500; //check for jwt token or google token
+    const isCustomAuth = token.length < 500; //check for jwt token 
     let decodedData;
 
     if (token && isCustomAuth) {
