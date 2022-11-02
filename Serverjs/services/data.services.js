@@ -2,7 +2,7 @@ const Data = require("../models/datamodel");
 const Hasil = require("../models/hasilmodel");
 const auth = require("../../Serverjs/middleware/auth");
 //const mysql = require('mysql');
-//const {db} = require('../config/db.config');
+//const {db} = require('../config/db.config')
 
 async function dataencrypt(params, callback) {
 
