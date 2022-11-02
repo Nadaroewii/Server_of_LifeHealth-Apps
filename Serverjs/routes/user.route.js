@@ -9,6 +9,6 @@ router.post("/login", userController.login);
 router.get("/user-profile", userController.userProfile);
 router.post("/dataencrypt",dataController.dataencrypt);
 router.get("/historydata", authenticateToken, userController.historydata);
-//router.get("/", userController.methodGet);
+//router.get("/", userController.methodGet)
 
 module.exports = router;
