@@ -194,5 +194,6 @@ exports.dataencrypt = (req, res, next) => {
             //return res.status(200).send({
                 //message: 'Success',
                 //data: result,
+//
             
  
