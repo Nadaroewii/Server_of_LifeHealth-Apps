@@ -51,31 +51,6 @@ exports.userProfile = (req, res, next) => {
           data: records,
       });
   });
-    // User.findById(
-    //     req.body.userId,
-    //     function (error, hasil) {
-    //         if (error) {
-    //             console.log(error);
-    //         } else {
-    //         }
-    //     }
-    // );
-};
-//     var model = {
-//         userId: req.params.id,
-//       // username: req.body.username,
-//        //dataId: req.body.dataId
-//      };
 
-//     userService.HistoryData(model, (error, results) => {
-//        if(error) {
-//            return next(error);
-//         }
-//         else {
-//            return res.status(200).send({
-//                message: "Success",
-//                data: results
-//             });
-//         }
-//     });     
-//  };
+};
+
