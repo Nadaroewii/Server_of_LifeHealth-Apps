@@ -145,55 +145,13 @@ exports.dataencrypt = (req, res, next) => {
               message: "Success",
               data: result,
           });
-            // User.findByIdAndUpdate(
-            //     req.body.userId,
-            //     { $push: { userId: result.id } },
-            //     { new: true },
-            //     function (error, user) {
-            //         if (error) {
-            //             console.log(error);
-            //         } else {
-
-            //             console.log("Berhasil");
-            //            // return res.status(200).send({
-            //              //   message: 'Success',
-            //             //});                   
-            //         }
-            //     }
-            // );
+          
         });
     } catch (error) {
         console.log(error)
     }
     
 };
-//         dataService.dataencrypt(datamodel, (error, result) => {
-//             if (error) {
-//                 return next(error);
-//             }
-//             User.findByIdAndUpdate(
-//                 req.body.userId,
-//                 { $push: { datarecord: result.id } },
-//                 { new: true },
-//                 function (error, user) {
-//                     if (error) {
-//                         console.log(error);
-//                     } else {
-//                         return res.status(200).send({
-//                             message: 'Success',
-//                         });                   
-//                     }
-//                 }
-//             );
-//         });
-//     } catch (error) {
-//         console.log(error)
-//     }
-    
-// };
-            //return res.status(200).send({
-                //message: 'Success',
-                //data: result,
-//
+
             
  
